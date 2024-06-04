@@ -338,7 +338,7 @@ main {
 
 .info-content .name {
   color: var(--white-2);
-  font-size: var(--fs-3);
+  font-size: var(--fs-4);
   font-weight: var(--fw-300);
   letter-spacing: -0.25px;
   margin-bottom: 10px;
@@ -424,7 +424,7 @@ main {
 
 .contact-info :is(.contact-link, time, address) {
   color: var(--white-2);
-  font-size: var(--fs-7);
+  font-size: var(--fs-8);
 }
 
 .contact-info address { font-style: normal; }
