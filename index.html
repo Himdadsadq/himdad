@@ -17,7 +17,7 @@
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     /* Avatar box styling */
@@ -71,25 +71,85 @@
 
 </head>
 
-<body>
+<body id="top">
+
+  <!--
+    - #HEADER
+  -->
+  <header class="header">
+    <a href="#" class="logo">
+      <span class="logo-icon" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M8 7h8"/><path d="M8 11h8"/></svg>
+      </span>
+      <span class="logo-text">Himdad</span>
+    </a>
+    <nav class="header-nav">
+      <a href="#" class="nav-link active" data-nav-link data-page="about">Home</a>
+      <a href="#" class="nav-link" data-nav-link data-page="about">About</a>
+      <a href="#" class="nav-link" data-nav-link data-page="resume">Resume</a>
+      <a href="#" class="nav-link" data-nav-link data-page="portfolio">Portfolio</a>
+      <a href="#" class="nav-link" data-nav-link data-page="about">Contact</a>
+    </nav>
+    <a href="#main-content" class="header-cta">Hire Me &raquo;</a>
+    <button class="header-menu-btn" aria-label="Menu" data-menu-toggle>
+      <ion-icon name="menu-outline"></ion-icon>
+    </button>
+  </header>
+
+  <!--
+    - #HERO
+  -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="hero-left">
+        <p class="hero-greeting">Hello! I'm</p>
+        <h1 class="hero-name">Himdad Sadq Ibrahim</h1>
+        <div class="hero-name-line"></div>
+        <p class="hero-desc">Mobile Application Developer specializing in Flutter, iOS &amp; Android. Building clean apps and exploring AI.</p>
+        <a href="#" class="hero-btn hero-btn-resume" data-nav-link data-page="resume">Get Resume <ion-icon name="download-outline"></ion-icon></a>
+        <div class="hero-watch">
+          <a href="#" class="hero-play-btn" aria-label="Watch video">
+            <span class="hero-play-icon"><ion-icon name="play"></ion-icon></span>
+          </a>
+          <span class="hero-watch-text">Watch Video</span>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-photo-arc">
+          <figure class="hero-photo-wrap" onclick="showImageModal(this)">
+            <img src="./assets/images/1.png" alt="Himdad" id="heroPhoto">
+          </figure>
+          <ul class="hero-social-arc">
+            <li><a href="https://github.com/Himdadsadq" class="hero-social-circle" aria-label="GitHub"><ion-icon name="logo-github"></ion-icon></a></li>
+            <li><a href="https://twitter.com/@Himdad13547" class="hero-social-circle" aria-label="Twitter"><ion-icon name="logo-twitter"></ion-icon></a></li>
+            <li><a href="https://www.linkedin.com/in/himdad-sadq-6935982b5" class="hero-social-circle" aria-label="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            <li><a href="https://t.me/himdad_sadq" class="hero-social-circle" aria-label="Telegram"><ion-icon name="paper-plane-outline"></ion-icon></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <a href="#top" class="scroll-top" aria-label="Scroll to top" id="scroll-top-btn">
+    <ion-icon name="chevron-up-outline"></ion-icon>
+  </a>
 
   <!--
     - #MAIN
   -->
-
-  <main>
+  <main id="main-content">
 
     <!--
-      - #SIDEBAR
+      - #SIDEBAR (compact for mobile / hidden on desktop with hero)
     -->
-
-    <aside class="sidebar" data-sidebar>
+    <aside class="sidebar sidebar-compact" data-sidebar>
 
       <div class="sidebar-info">
         <!-- lera ra baxom nusye -->
 
         <figure class="avatar-box" onclick="showImageModal()">
-          <img src="./assets/images/1.JPG" alt="Himdad">
+          <img src="./assets/images/1.png" alt="Himdad">
         </figure>
 
         <!-- Modal for Enlarged Image -->
@@ -99,16 +159,14 @@
         </div>
 
         <script>
-          function showImageModal() {
+          function showImageModal(el) {
             var modal = document.getElementById("imageModal");
-            var img = document.querySelector(".avatar-box img");
+            var img = (el && el.querySelector && el.querySelector("img")) ? el.querySelector("img") : document.querySelector(".avatar-box img") || document.getElementById("heroPhoto");
             var modalImg = document.getElementById("img01");
-
+            if (!img) return;
             modal.style.display = "flex";
             modalImg.src = img.src;
-            setTimeout(() => {
-              modalImg.style.transform = "scale(1)";
-            }, 100);
+            setTimeout(function() { modalImg.style.transform = "scale(1)"; }, 100);
           }
 
           function closeImageModal() {
@@ -926,6 +984,126 @@ Web cloud computing:
           <ul class="project-list">
 
 
+      <li class="project-item  active" data-filter-item data-category="applications">
+              <figure class="project-img">
+                <a href="https://apps.apple.com/us/app/e-sava/id6751881433" target="_blank" rel="noopener noreferrer" class="project-img-link">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/e_sava.PNG" alt="E-Sava" loading="lazy">
+                </a>
+              </figure>
+              <h3 class="project-title">E-Sava</h3>
+              <p class="project-category">Applications</p>
+              <div class="project-store-links">
+                <a href="https://apps.apple.com/us/app/e-sava/id6751881433" target="_blank" rel="noopener noreferrer" class="store-link store-link-ios">App Store</a>
+                <a href="https://play.google.com/store/apps/details?id=com.BlackBox.e_sava_v2" target="_blank" rel="noopener noreferrer" class="store-link store-link-android">Google Play</a>
+              </div>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <figure class="project-img">
+                <a href="https://apps.apple.com/ca/app/s-sales/id6748351178" target="_blank" rel="noopener noreferrer" class="project-img-link">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/sammar.PNG" alt="Sammar" loading="lazy">
+                </a>
+              </figure>
+              <h3 class="project-title">Sammar</h3>
+              <p class="project-category">Applications</p>
+              <div class="project-store-links">
+                <a href="https://apps.apple.com/ca/app/s-sales/id6748351178" target="_blank" rel="noopener noreferrer" class="store-link store-link-ios">App Store</a>
+                <a href="https://play.google.com/store/apps/details?id=com.sammar.iq&hl=en" target="_blank" rel="noopener noreferrer" class="store-link store-link-android">Google Play</a>
+              </div>
+            </li>
+
+          
+
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <figure class="project-img">
+                <a href="https://apps.apple.com/us/app/medical-line/id6443775462" target="_blank" rel="noopener noreferrer" class="project-img-link">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/medicaline.PNG" alt="Medical Line" loading="lazy">
+                </a>
+              </figure>
+              <h3 class="project-title">Medical Line</h3>
+              <p class="project-category">Applications</p>
+              <div class="project-store-links">
+                <a href="https://apps.apple.com/us/app/medical-line/id6443775462" target="_blank" rel="noopener noreferrer" class="store-link store-link-ios">App Store</a>
+                <a href="https://play.google.com/store/apps/details?id=com.jiasaz.medicalline&hl=ar" target="_blank" rel="noopener noreferrer" class="store-link store-link-android">Google Play</a>
+              </div>
+            </li>
+
+        
+
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <figure class="project-img">
+                <a href="https://apps.apple.com/us/app/e-sava-teacher/id6755903214" target="_blank" rel="noopener noreferrer" class="project-img-link">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/e-sava-teacher.PNG" alt="E-Sava Teacher" loading="lazy">
+                </a>
+              </figure>
+              <h3 class="project-title">E-Sava Teacher</h3>
+              <p class="project-category">Applications</p>
+              <div class="project-store-links">
+                <a href="https://apps.apple.com/us/app/e-sava-teacher/id6755903214" target="_blank" rel="noopener noreferrer" class="store-link store-link-ios">App Store</a>
+                <a href="https://play.google.com/store/apps/details?id=com.BlackBox.e_sava_teacher_v2&hl=en" target="_blank" rel="noopener noreferrer" class="store-link store-link-android">Google Play</a>
+              </div>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <figure class="project-img">
+                <a href="https://apps.apple.com/my/app/mandubi/id6452401046" target="_blank" rel="noopener noreferrer" class="project-img-link">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/mandubi.PNG" alt="Mandubi" loading="lazy">
+                </a>
+              </figure>
+              <h3 class="project-title">Mandubi</h3>
+              <p class="project-category">Applications</p>
+              <div class="project-store-links">
+                <a href="https://apps.apple.com/my/app/mandubi/id6452401046" target="_blank" rel="noopener noreferrer" class="store-link store-link-ios">App Store</a>
+                <a href="https://play.google.com/store/apps/details?id=com.medicalsale.sass" target="_blank" rel="noopener noreferrer" class="store-link store-link-android">Google Play</a>
+              </div>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <figure class="project-img">
+                <a href="https://apps.apple.com/us/app/eliavit/id6753561042" target="_blank" rel="noopener noreferrer" class="project-img-link">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/Eliavit.jpeg" alt="Eliavit" loading="lazy">
+                </a>
+              </figure>
+              <h3 class="project-title">Eliavit</h3>
+              <p class="project-category">Applications</p>
+              <div class="project-store-links">
+                <a href="https://apps.apple.com/us/app/eliavit/id6753561042" target="_blank" rel="noopener noreferrer" class="store-link store-link-ios">App Store</a>
+                <a href="https://play.google.com/store/apps/details?id=com.BlackBoxTech.Basales" target="_blank" rel="noopener noreferrer" class="store-link store-link-android">Google Play</a>
+              </div>
+            </li>
+              <li class="project-item  active" data-filter-item data-category="applications">
+              <figure class="project-img">
+                <a href="https://apps.apple.com/us/app/organo-sales/id1552706417" target="_blank" rel="noopener noreferrer" class="project-img-link">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/organo.PNG" alt="Organo Sales" loading="lazy">
+                </a>
+              </figure>
+              <h3 class="project-title">Organo Sales</h3>
+              <p class="project-category">Applications</p>
+              <div class="project-store-links">
+                <a href="https://apps.apple.com/us/app/organo-sales/id1552706417" target="_blank" rel="noopener noreferrer" class="store-link store-link-ios">App Store</a>
+              </div>
+            </li>
             <li class="project-item  active" data-filter-item data-category="applications">
               <a href="#">
 
@@ -975,7 +1153,7 @@ Web cloud computing:
                 <p class="project-category">Applications</p>
 
               </a>
-            </li>  
+            </li>
 
             <!-- <li class="project-item  active" data-filter-item data-category="applications"> -->
               <!-- <a href="#"> -->
@@ -1133,7 +1311,7 @@ Web cloud computing:
               <a href="#">
 
                 <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
+                  <img src="./assets/images/blog-1.png" alt="Design conferences in 2022" loading="lazy">
                 </figure>
 
                 <div class="blog-content">
