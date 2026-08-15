@@ -191,3 +191,44 @@ for (let i = 0; i < navigationLinks.length; i++) {
     document.getElementById("main-content") && document.getElementById("main-content").scrollIntoView({ behavior: "smooth" });
   });
 }
+
+// hero video modal
+const heroVideoOpenBtn = document.querySelector("[data-hero-video-open]");
+const heroVideoModal = document.querySelector("[data-hero-video-modal]");
+const heroVideoCloseEls = document.querySelectorAll("[data-hero-video-close]");
+const heroVideoPlayer = document.querySelector("[data-hero-video-player]");
+
+const setHeroVideoModalOpen = function (open) {
+  if (!heroVideoModal) return;
+  heroVideoModal.classList.toggle("active", open);
+  heroVideoModal.setAttribute("aria-hidden", open ? "false" : "true");
+
+  if (!heroVideoPlayer) return;
+  if (open) {
+    try { heroVideoPlayer.currentTime = 0; } catch (_) {}
+    const playPromise = heroVideoPlayer.play();
+    if (playPromise && typeof playPromise.catch === "function") playPromise.catch(function () { });
+  } else {
+    try { heroVideoPlayer.pause(); } catch (_) {}
+    try { heroVideoPlayer.currentTime = 0; } catch (_) {}
+  }
+}
+
+if (heroVideoOpenBtn && heroVideoModal) {
+  heroVideoOpenBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    setHeroVideoModalOpen(true);
+  });
+}
+
+for (let i = 0; i < heroVideoCloseEls.length; i++) {
+  heroVideoCloseEls[i].addEventListener("click", function () {
+    setHeroVideoModalOpen(false);
+  });
+}
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && heroVideoModal && heroVideoModal.classList.contains("active")) {
+    setHeroVideoModalOpen(false);
+  }
+});

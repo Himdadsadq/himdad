@@ -7,14 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Himdad sadq ibrahim</title>
 
-  <!--
-    - custom css link
-  -->
   <link rel="stylesheet" href="./assets/css/style.css">
 
-  <!--
-    - google font link
-  -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -100,7 +95,13 @@
     - #HERO
   -->
   <section class="hero">
-    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-bg" aria-hidden="true">
+      <video class="hero-bg-video" autoplay muted loop playsinline preload="metadata" poster="./assets/images/IMG_0996.jpg">
+        <source src="./assets/videos/hero.webm" type="video/webm">
+        <source src="./assets/videos/hero.mp4" type="video/mp4">
+      </video>
+      <div class="hero-bg-overlay" aria-hidden="true"></div>
+    </div>
     <div class="hero-inner">
       <div class="hero-left">
         <p class="hero-greeting">Hello! I'm</p>
@@ -109,7 +110,7 @@
         <p class="hero-desc">Mobile Application Developer specializing in Flutter, iOS &amp; Android. Building clean apps and exploring AI.</p>
         <a href="#" class="hero-btn hero-btn-resume" data-nav-link data-page="resume">Get Resume <ion-icon name="download-outline"></ion-icon></a>
         <div class="hero-watch">
-          <a href="#" class="hero-play-btn" aria-label="Watch video">
+          <a href="#" class="hero-play-btn" aria-label="Watch video" data-hero-video-open>
             <span class="hero-play-icon"><ion-icon name="play"></ion-icon></span>
           </a>
           <span class="hero-watch-text">Watch Video</span>
@@ -130,6 +131,19 @@
       </div>
     </div>
   </section>
+
+  <div class="hero-video-modal" data-hero-video-modal aria-hidden="true">
+    <div class="hero-video-modal__overlay" data-hero-video-close aria-hidden="true"></div>
+    <div class="hero-video-modal__dialog" role="dialog" aria-modal="true" aria-label="Intro video">
+      <button class="hero-video-modal__close" type="button" aria-label="Close video" data-hero-video-close>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+      <video class="hero-video-modal__video" controls playsinline preload="metadata" poster="./assets/images/IMG_0996.jpg" data-hero-video-player>
+        <source src="./assets/videos/hero.mp4" type="video/mp4">
+        <source src="./assets/videos/hero.webm" type="video/webm">
+      </video>
+    </div>
+  </div>
 
   <a href="#top" class="scroll-top" aria-label="Scroll to top" id="scroll-top-btn">
     <ion-icon name="chevron-up-outline"></ion-icon>
