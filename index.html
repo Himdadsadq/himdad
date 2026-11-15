@@ -53,8 +53,13 @@
       <div class="hero-left">
         <p class="hero-greeting">Hello! I'm</p>
         <h1 class="hero-name">Himdad Sadq <span>Ibrahim</span></h1>
+        <div class="hero-professions" role="img" aria-label="Professional specialties: Mobile Application Developer, Full-Stack Web Developer, UI/UX Designer">
+          <span aria-hidden="true">Mobile Application Developer</span>
+          <span aria-hidden="true">Full-Stack Web Developer</span>
+          <span aria-hidden="true">UI/UX Designer</span>
+        </div>
         <div class="hero-name-line"></div>
-        <p class="hero-desc">Mobile Application Developer specializing in Flutter, iOS &amp; Android. Building clean apps and exploring AI.</p>
+        <p class="hero-desc">Mobile Application Developer | Full-Stack Web Developer | UI/UX Designer. Building modern mobile applications, responsive websites, powerful backend systems, and beautiful user experiences while exploring AI.</p>
         <a href="#" class="hero-btn hero-btn-resume" data-nav-link data-page="resume">Get Resume <ion-icon name="download-outline"></ion-icon></a>
         <div class="hero-watch">
           <a href="#" class="hero-play-btn" aria-label="Watch video" data-hero-video-open>
@@ -541,97 +546,79 @@
 
           <h3 class="h3 clients-title">Languages I Code In</h3>
 
-          <ul class="clients-list has-scrollbar">
-
+          <ul class="clients-list technologies-grid">
             <li class="clients-item">
-
-              <img src="./assets/images/flutter.webp" alt="client logo">
-              <center class="flutter-center">Flutter</center>
-
+              <img src="./assets/images/flutter.webp" alt="Flutter logo" loading="lazy" width="44" height="44">
+              <span class="flutter-center">Flutter</span>
             </li>
-
             <li class="clients-item">
-
-              <img src="./assets/images/dart_icon.png" alt="client logo">
-              <center class="flutter-center">Dart</center>
-
+              <img src="./assets/images/dart_icon.png" alt="Dart logo" loading="lazy" width="44" height="44">
+              <span class="flutter-center">Dart</span>
             </li>
-
-
-            <li class="clients-item" onclick="showName(this)">
-
-              <img src="./assets/images/firebase.png" alt="client logo">
-              <center class="flutter-center">Firabase</center>
-
-            </li>
-            <!-- bas lo scriptaka -->
-            <script>
-              function showName(element) {
-                // Remove the 'clicked' class from all other clients-item elements
-                document.querySelectorAll('.clients-item').forEach(item => {
-                  item.classList.remove('clicked');
-                });
-
-                // Add the 'clicked' class to the clicked clients-item element
-                element.classList.toggle('clicked');
-              }
-            </script>
-
             <li class="clients-item">
-
-              <img src="./assets/images/Sqlite.png" alt="client logo">
-              <center class="flutter-center" onclick="changeColor(this)">Sqlite</center>
-              <script>
-                function changeColor(element) {
-                  element.classList.toggle('clicked');
-                }
-              </script>
-              <!-- <center class="flutter-center">Python</center> -->
-
-            
+              <img src="./assets/images/firebase.png" alt="Firebase logo" loading="lazy" width="44" height="44">
+              <span class="flutter-center">Firebase</span>
             </li>
-
             <li class="clients-item">
-
-              <img src="./assets/images/java.png" alt="client logo">
-              <center class="flutter-center" onclick="changeColor(this)">Java</center>
-              <script>
-                function changeColor(element) {
-                  element.classList.toggle('clicked');
-                }
-              </script>
-              <!-- <center class="flutter-center">Python</center> -->
-
+              <img src="./assets/images/Sqlite.png" alt="SQLite database icon" loading="lazy" width="44" height="44">
+              <span class="flutter-center">SQLite</span>
             </li>
-
-
             <li class="clients-item">
-
-              <img src="./assets/images/c6.png" alt="client logo">
-              <center class="flutter-center">C#</center>
-
-
+              <img src="./assets/images/java.png" alt="Java logo" loading="lazy" width="44" height="44">
+              <span class="flutter-center">Java</span>
             </li>
-
             <li class="clients-item">
-
-              <img src="./assets/images/android studio.png" alt="client logo">
-              <center class="flutter-center">Android studio</center>
-
-
+              <img src="./assets/images/c6.png" alt="C sharp logo" loading="lazy" width="44" height="44">
+              <span class="flutter-center">C#</span>
             </li>
-
             <li class="clients-item">
-
-
-              <img src="./assets/images/htm.png" alt="client logo">
-
-              <center class="flutter-center">Html,Css,JS</center>
-
-
-
+              <img src="./assets/images/android studio.png" alt="Android Studio logo" loading="lazy" width="44" height="44">
+              <span class="flutter-center">Android Studio</span>
             </li>
-
+            <li class="clients-item">
+              <img src="./assets/images/htm.png" alt="HTML, CSS and JavaScript logo" loading="lazy" width="44" height="44">
+              <span class="flutter-center">HTML, CSS, JavaScript</span>
+            </li>
+            <li class="clients-item">
+              <img src="./assets/images/tech/php.svg" alt="PHP logo" loading="lazy" width="44" height="44">
+              <span class="flutter-center">PHP</span>
+            </li>
+            <li class="clients-item">
+              <img src="./assets/images/tech/laravel.svg" alt="Laravel logo" loading="lazy" width="44" height="44">
+              <span class="flutter-center">Laravel</span>
+            </li>
+            <li class="clients-item">
+              <img src="./assets/images/tech/bootstrap.svg" alt="Bootstrap logo" loading="lazy" width="44" height="44">
+              <span class="flutter-center">Bootstrap</span>
+            </li>
+            <li class="clients-item">
+              <img src="./assets/images/tech/tailwind.svg" alt="Tailwind CSS logo" loading="lazy" width="44" height="44">
+              <span class="flutter-center">Tailwind CSS</span>
+            </li>
+            <li class="clients-item">
+              <img src="./assets/images/tech/onesignal.svg" alt="OneSignal icon" loading="lazy" width="44" height="44">
+              <span class="flutter-center">OneSignal</span>
+            </li>
+            <li class="clients-item">
+              <img src="./assets/images/tech/react.svg" alt="React atom logo" loading="lazy" width="44" height="44">
+              <span class="flutter-center">React Native</span>
+            </li>
+            <li class="clients-item">
+              <img src="./assets/images/tech/react.svg" alt="React atom logo" loading="lazy" width="44" height="44">
+              <span class="flutter-center">React.js</span>
+            </li>
+            <li class="clients-item">
+              <img src="./assets/images/tech/figma.svg" alt="Figma logo" loading="lazy" width="44" height="44">
+              <span class="flutter-center">Figma</span>
+            </li>
+            <li class="clients-item">
+              <img src="./assets/images/tech/ai-agents.svg" alt="AI agents network icon" loading="lazy" width="44" height="44">
+              <span class="flutter-center">AI Agents</span>
+            </li>
+            <li class="clients-item">
+              <img src="./assets/images/tech/wordpress.svg" alt="WordPress logo" loading="lazy" width="44" height="44">
+              <span class="flutter-center">WordPress</span>
+            </li>
           </ul>
 
           <!-- <ul class="clients-list has-scrollbar">

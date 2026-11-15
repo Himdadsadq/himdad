@@ -981,3 +981,81 @@ padding:8px 12px}
 .scroll-top{
 right:14px;
 bottom:14px}}
+
+/* Technology cards */
+.clients-list.technologies-grid{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:14px;
+  overflow:visible;
+}
+.clients-list.technologies-grid .clients-item{
+  min-width:0;
+  min-height:132px;
+  padding:19px 12px 16px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:#fff;
+  box-shadow:0 8px 24px #243f6708;
+  transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease,background .22s ease;
+}
+.clients-list.technologies-grid .clients-item:hover{
+  transform:translateY(-4px);
+  border-color:#b6d0ff;
+  background:#f8fbff;
+  box-shadow:0 14px 30px #1769ff1c;
+}
+.clients-list.technologies-grid .clients-item img{
+  width:44px;
+  height:44px;
+  margin:0;
+  object-fit:contain;
+}
+.clients-list.technologies-grid .flutter-center{
+  font-size:13px;
+  line-height:1.35;
+  text-align:center;
+}
+@media(max-width:900px){
+  .clients-list.technologies-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media(max-width:640px){
+  .clients-list.technologies-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+  .clients-list.technologies-grid .clients-item{min-height:124px}
+}
+
+/* Rotating hero specialties */
+.hero-professions{
+  position:relative;
+  height:27px;
+  margin:15px 0 0;
+  color:var(--blue);
+  font:700 16px/1.5 var(--sans);
+  letter-spacing:.01em;
+}
+.hero-professions span{
+  position:absolute;
+  inset:0 auto auto 0;
+  opacity:0;
+  transform:translateY(7px);
+  animation:profession-cycle 9s infinite;
+}
+.hero-professions span:nth-child(2){animation-delay:3s}
+.hero-professions span:nth-child(3){animation-delay:6s}
+@keyframes profession-cycle{
+  0%,4%{opacity:0;transform:translateY(7px)}
+  8%,28%{opacity:1;transform:translateY(0)}
+  33%,100%{opacity:0;transform:translateY(-5px)}
+}
+@media(max-width:640px){
+  .hero-professions{height:25px;margin-top:12px;font-size:14px}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-professions span{animation:none;position:static;display:none}
+  .hero-professions span:first-child{display:block;opacity:1;transform:none}
+}
