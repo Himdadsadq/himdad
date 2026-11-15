@@ -5,64 +5,16 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Himdad sadq ibrahim</title>
+  <title>Himdad Sadq Ibrahim — Mobile Application Developer</title>
+  <meta name="description" content="Himdad Sadq Ibrahim is a mobile application developer specializing in Flutter, iOS, Android, and clean user-focused apps.">
 
   <link rel="stylesheet" href="./assets/css/style.css">
 
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    /* Avatar box styling */
-    .avatar-box img {
-      border-radius: 50%;
-      transition: transform 0.3s;
-      cursor: pointer;
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-    }
-
-    /* Modal styling */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      align-items: center;
-      justify-content: center;
-    }
-
-    .modal-content {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .close {
-      position: absolute;
-      top: 15px;
-      right: 35px;
-      color: #f1f1f1;
-      font-size: 40px;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: #bbb;
-      text-decoration: none;
-      cursor: pointer;
-    }
-  </style>
 
 </head>
 
@@ -73,19 +25,17 @@
   -->
   <header class="header">
     <a href="#" class="logo">
-      <span class="logo-icon" aria-hidden="true">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M8 7h8"/><path d="M8 11h8"/></svg>
-      </span>
+      <span class="logo-icon" aria-hidden="true">H</span>
       <span class="logo-text">Himdad</span>
     </a>
     <nav class="header-nav">
-      <a href="#" class="nav-link active" data-nav-link data-page="about">Home</a>
-      <a href="#" class="nav-link" data-nav-link data-page="about">About</a>
-      <a href="#" class="nav-link" data-nav-link data-page="resume">Resume</a>
-      <a href="#" class="nav-link" data-nav-link data-page="portfolio">Portfolio</a>
-      <a href="#" class="nav-link" data-nav-link data-page="about">Contact</a>
+      <a href="#top" class="nav-link active" data-nav-link data-page="home">Home</a>
+      <a href="#main-content" class="nav-link" data-nav-link data-page="about">About</a>
+      <a href="#main-content" class="nav-link" data-nav-link data-page="resume">Resume</a>
+      <a href="#main-content" class="nav-link" data-nav-link data-page="portfolio">Portfolio</a>
+      <a href="#contact" class="nav-link" data-nav-link data-page="contact">Contact</a>
     </nav>
-    <a href="#main-content" class="header-cta">Hire Me &raquo;</a>
+    <a href="mailto:himdadsadq20@gmail.com" class="header-cta">Hire Me <span aria-hidden="true">↗</span></a>
     <button class="header-menu-btn" aria-label="Menu" data-menu-toggle>
       <ion-icon name="menu-outline"></ion-icon>
     </button>
@@ -96,16 +46,13 @@
   -->
   <section class="hero">
     <div class="hero-bg" aria-hidden="true">
-      <video class="hero-bg-video" autoplay muted loop playsinline preload="metadata" poster="./assets/images/IMG_0996.jpg">
-        <source src="./assets/videos/hero.webm" type="video/webm">
-        <source src="./assets/videos/hero.mp4" type="video/mp4">
-      </video>
+      <div class="hero-orbit" aria-hidden="true"></div>
       <div class="hero-bg-overlay" aria-hidden="true"></div>
     </div>
     <div class="hero-inner">
       <div class="hero-left">
         <p class="hero-greeting">Hello! I'm</p>
-        <h1 class="hero-name">Himdad Sadq Ibrahim</h1>
+        <h1 class="hero-name">Himdad Sadq <span>Ibrahim</span></h1>
         <div class="hero-name-line"></div>
         <p class="hero-desc">Mobile Application Developer specializing in Flutter, iOS &amp; Android. Building clean apps and exploring AI.</p>
         <a href="#" class="hero-btn hero-btn-resume" data-nav-link data-page="resume">Get Resume <ion-icon name="download-outline"></ion-icon></a>
@@ -691,6 +638,11 @@
            
           </ul> -->
 
+        </section>
+
+        <section class="contact-panel" id="contact">
+          <div><p class="eyebrow">LET’S CONNECT</p><h3>Have a project in mind?</h3><p>Reach out and let’s talk about what we can build together.</p></div>
+          <a class="contact-action" href="mailto:himdadsadq20@gmail.com">himdadsadq20@gmail.com <span aria-hidden="true">↗</span></a>
         </section>
 
       </article>
@@ -1507,6 +1459,12 @@ Web cloud computing:
     </div>
 
   </main>
+
+  <footer class="site-footer">
+    <a href="#top" class="footer-brand">Himdad Sadq Ibrahim</a>
+    <p>Mobile Application Developer · Flutter, iOS &amp; Android</p>
+    <a href="#top" class="footer-top">Back to top ↑</a>
+  </footer>
 
 
 
