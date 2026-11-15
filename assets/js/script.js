@@ -73,21 +73,18 @@ overlay?.addEventListener('click', closeTestimonial);
 
 const filterItems = [...document.querySelectorAll('[data-filter-item]')];
 function filterProjects(value) {
-  filterItems.forEach(item => item.classList.toggle('active', value === 'all' || item.dataset.category === value));
+  const category = value === 'mobile applications' ? 'applications' : value;
+  filterItems.forEach(item => item.classList.toggle('active', category === 'all' || item.dataset.category === category));
 }
-const select = document.querySelector('[data-select]');
-select?.addEventListener('click', () => select.classList.toggle('active'));
-const selectValue = document.querySelector('[data-selecct-value]');
-document.querySelectorAll('[data-select-item]').forEach(item => item.addEventListener('click', () => {
-  const value = item.textContent.trim().toLowerCase();
-  if (selectValue) selectValue.textContent = item.textContent.trim();
-  select?.classList.remove('active'); filterProjects(value);
-}));
 let lastFilter = document.querySelector('[data-filter-btn].active');
 document.querySelectorAll('[data-filter-btn]').forEach(button => button.addEventListener('click', () => {
-  const value = button.textContent.trim().toLowerCase();
-  if (selectValue) selectValue.textContent = button.textContent.trim();
-  filterProjects(value); lastFilter?.classList.remove('active'); button.classList.add('active'); lastFilter = button;
+  const value = button.dataset.filterValue || button.textContent.trim().toLowerCase();
+  filterProjects(value);
+  lastFilter?.classList.remove('active');
+  lastFilter?.setAttribute('aria-pressed', 'false');
+  button.classList.add('active');
+  button.setAttribute('aria-pressed', 'true');
+  lastFilter = button;
 }));
 
 const form = document.querySelector('[data-form]');
