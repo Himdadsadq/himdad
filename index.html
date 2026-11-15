@@ -62,7 +62,7 @@
         <p class="hero-desc">Mobile Application Developer | Full-Stack Web Developer | UI/UX Designer. Building modern mobile applications, responsive websites, powerful backend systems, and beautiful user experiences while exploring AI.</p>
         <a href="#" class="hero-btn hero-btn-resume" data-nav-link data-page="resume">Get Resume <ion-icon name="download-outline"></ion-icon></a>
         <div class="hero-watch">
-          <a href="#" class="hero-play-btn" aria-label="Watch video" data-hero-video-open>
+          <a href="#" class="hero-play-btn" aria-label="Watch portfolio presentation" aria-haspopup="dialog" aria-controls="portfolio-showreel" data-hero-video-open>
             <span class="hero-play-icon"><ion-icon name="play"></ion-icon></span>
           </a>
           <span class="hero-watch-text">Watch Video</span>
@@ -84,17 +84,27 @@
     </div>
   </section>
 
-  <div class="hero-video-modal" data-hero-video-modal aria-hidden="true">
-    <div class="hero-video-modal__overlay" data-hero-video-close aria-hidden="true"></div>
-    <div class="hero-video-modal__dialog" role="dialog" aria-modal="true" aria-label="Intro video">
-      <button class="hero-video-modal__close" type="button" aria-label="Close video" data-hero-video-close>
-        <ion-icon name="close-outline"></ion-icon>
-      </button>
-      <video class="hero-video-modal__video" controls playsinline preload="metadata" poster="./assets/images/IMG_0996.jpg" data-hero-video-player>
-        <source src="./assets/videos/hero.mp4" type="video/mp4">
-        <source src="./assets/videos/hero.webm" type="video/webm">
-      </video>
-    </div>
+  <div class="hero-video-modal portfolio-showreel" id="portfolio-showreel" data-hero-video-modal aria-hidden="true" inert>
+    <button class="hero-video-modal__overlay showreel-overlay" type="button" data-hero-video-close aria-label="Close project presentation"></button>
+    <section class="hero-video-modal__dialog showreel-dialog" role="dialog" aria-modal="true" aria-labelledby="showreel-title" tabindex="-1">
+      <header class="showreel-header">
+        <a class="showreel-brand" href="#top" aria-label="Himdad portfolio home"><span>H</span> Himdad <small>Selected work</small></a>
+        <button class="showreel-close" type="button" aria-label="Close presentation" data-hero-video-close><ion-icon name="close-outline"></ion-icon></button>
+      </header>
+      <main class="showreel-stage" data-showreel-stage aria-live="polite"></main>
+      <footer class="showreel-controls">
+        <div class="showreel-progress" aria-hidden="true"><span data-showreel-progress></span></div>
+        <div class="showreel-control-row">
+          <p class="showreel-count" data-showreel-count aria-live="off">00 / 00</p>
+          <div class="showreel-control-actions">
+            <button type="button" class="showreel-control" data-showreel-prev aria-label="Previous slide"><ion-icon name="arrow-back-outline"></ion-icon></button>
+            <button type="button" class="showreel-play" data-showreel-play aria-label="Pause presentation"><ion-icon name="pause-outline" data-showreel-play-icon></ion-icon><span data-showreel-play-label>Pause</span></button>
+            <button type="button" class="showreel-control" data-showreel-next aria-label="Next slide"><ion-icon name="arrow-forward-outline"></ion-icon></button>
+          </div>
+          <p class="showreel-hint">Use ← → to navigate <span>·</span> Esc to close</p>
+        </div>
+      </footer>
+    </section>
   </div>
 
   <a href="#top" class="scroll-top" aria-label="Scroll to top" id="scroll-top-btn">
