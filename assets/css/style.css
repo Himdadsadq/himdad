@@ -265,8 +265,10 @@ cursor:zoom-in}
 .hero-photo-wrap img{
 height:100%;
 width:100%;
-object-fit:cover;
-object-position:center 36%;
+object-fit:contain;
+object-position:center bottom;
+transform:scale(1.25);
+transform-origin:center bottom;
 filter:drop-shadow(0 20px 26px #172f5425)}
 .hero-social-arc{
 position:absolute;
